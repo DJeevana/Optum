@@ -5,7 +5,7 @@ using System.IO;
 
 Public Class Program
 {
-		public statis void Main(strings[] args)
+		public static void Main(strings[] args)
 		{
 			Product selectedProduct;
 			bool validInput=false;
