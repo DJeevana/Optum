@@ -11,6 +11,7 @@ Public Class Program
 			bool validInput=false;
 			int index;
 			VendingMachine vmInstance=new VendingMachine();
+			decimal moneyReceived=0.00;
 			
 			Console.Clear();
 			Console.WriteLine("Please select a product"); // Assuming the customer would select the product code which is basically the index starting from 0
@@ -45,7 +46,12 @@ Public Class Program
 			Consle.WriteLine("Please proceed for the payment of $: "+selectedProduct.Price);
 			Console.WriteLine("Accepted coins are nickels, dimes and quarters")
 			
+			decimal amountToBePaid=selectedProduct.Price;
 			
+			while(moneyReceived<amountToBePaid)
+			{
+				
+			}
 			
 		
 		}
