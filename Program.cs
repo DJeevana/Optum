@@ -7,7 +7,9 @@ Public Class Program
 {
 		public statis void Main(strings[] args)
 		{
-		
+			Console.Clear();
+			Console.WriteLine("INSERT COIN");
+			
 		}
 }
 
