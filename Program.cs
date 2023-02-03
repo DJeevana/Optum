@@ -5,6 +5,9 @@ using System.IO;
 
 Public Class Program
 {
-
+		public statis void Main(strings[] args)
+		{
+		
+		}
 }
 
