@@ -12,6 +12,7 @@ Public Class Program
 			int index;
 			VendingMachine vmInstance=new VendingMachine();
 			decimal moneyReceived=0.00;
+			bool transactionSuccessful = false;
 			
 			Console.Clear();
 			Console.WriteLine("Please select a product"); // Assuming the customer would select the product code which is basically the index starting from 0
@@ -50,10 +51,27 @@ Public Class Program
 			
 			while(moneyReceived<amountToBePaid)
 			{
-				
+				Console.WrireLine("Amount To be paid: "+amountToBePaid+" Money Received: "+moneyReceived);
+				Console.WriteLine("Please insert coin");
+				string  coinInserted= Console.ReadLine();
+				try
+				{
+					moneyReceived+=Currency.exchange[coinInserted];
+				}
+				catch(Exception ex)
+				{
+					Console.WriteLine("Invalid coin inserted. Please collect the coin. Accepted coins are Nickels, Dimes and Quarters"); 
+				}
 			}
-			
-		
+			if(moneyReceived>amountToBePaid)
+			{
+				decimal change= moneyReceived-amountToBePaid;
+				Console.WriteLine("Please collect the additional cash: "+change/exchange[0]+" Nickels);
+				//Assuming the additional change is rendered in the lowest possible denomination i.e. Nickels.
+			}
+			Console.WriteLine("Thank you for the purchase. Please collect your item");
+			transactionSuccessful=true;
+			selectedProduct.Quantity--;
 		}
 }
 
